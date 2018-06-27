@@ -1,1 +1,1 @@
-print('aaa')
+print('6666')
