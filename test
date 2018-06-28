@@ -1,5 +1,6 @@
-dddd
-eeee
-ffff
-gggg
-hhhh
+82  8380   80  8680
+
+
+
+
+select * from s_register where name like 'mjy@fj0012';
