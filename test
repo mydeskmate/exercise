@@ -3,6 +3,8 @@ rrrr
 eeee
 gggg
 yyyy
+yyyy
+yuuuu
 
 
 select * from s_register where name like 'mjy@fj0012';
