@@ -1,19 +1,20 @@
-import hashlib
+from gevent import monkey;monkey.patch_all()
+
+import gevent
 import time
-class MySQL:
+def eat():
+    print('eat food 1')
+    time.sleep(2)
+    print('eat food 2')
 
-    def __init__(self,host,port):
-        self.id=self.create_id()
-        self.host=host
-        self.port=port
-    @staticmethod
-    def create_id(): #就是一个普通工具
-        m=hashlib.md5(str(time.time()).encode('utf-8'))
-        return m.hexdigest()
+def play():
+    print('play 1')
+    time.sleep(1)
+    print('play 2')
 
-
-print(MySQL.create_id) #<function MySQL.create_id at 0x0000000001E6B9D8> #查看结果为普通函数
-conn=MySQL('127.0.0.1',3306)
-print(conn.create_id) #<function MySQL.create_id at 0x00000000026FB9D8> #查看结果为普通函数
-
-
+g1=gevent.spawn(eat)
+g2=gevent.spawn(play)
+gevent.joinall([g1,g2])
+print('主')
+dddddd
+rrrrr
